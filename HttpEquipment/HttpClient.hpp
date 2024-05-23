@@ -1,9 +1,12 @@
 #ifndef HTTPCLIENT_H
 #define HTTPCLIENT_H
 #include "mongoose.h"
+#include <functional>
 #include <string>
 
-typedef std::string (*ReturnMsgHandle)(const std::string&);
+typedef std::function<std::string(const std::string&)> ReturnMsgHandle;
+
+// typedef std::string (*ReturnMsgHandle)(const std::string&);
 
 struct ev_handle_data {
     bool done;
@@ -53,14 +56,14 @@ static void http_en_handle(mg_connection* c, int ev, void* ev_data)
 
 class HttpClient {
 public:
-    static std::string connect_once(const std::string& url)
+    static std::string connect_once(const std::string& url, ReturnMsgHandle ret_handle = nullptr)
     {
         mg_mgr mgr;
         mg_mgr_init(&mgr);
         ev_handle_data ev_data;
         ev_data.done = false;
         ev_data.url = url;
-        ev_data.return_msg_handle = nullptr;
+        ev_data.return_msg_handle = ret_handle;
         mg_connection* conn = mg_http_connect(&mgr, url.c_str(), http_en_handle, (void*)&ev_data);
         if (conn == NULL) {
             // std::cerr << "connect ERROR" << std::endl;
