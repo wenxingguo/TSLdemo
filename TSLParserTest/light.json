@@ -1,0 +1,240 @@
+{
+    "profile": {
+        "productKey":"light",
+        "version":"1"
+    },
+    "extendConfig":{
+        "customizeConfig":{
+            "events":[],
+            "properties":[
+                {
+                    "content":"/lightStatus",
+                    "identifier":"lightStatus"
+                },
+                {
+                    "content":"/lightColor",
+                    "identifier":"lightColor"
+                },
+                {
+                    "content":"/lightIP",
+                    "identifier":"IP"
+                }
+            ],
+            "services":[
+                {
+                    "content":"/lightON",
+                    "identifier":"lightON"
+                },
+                {
+                    "content":"/lightOFF",
+                    "identifier":"lightOFF"
+                },
+                {
+                    "content":"/Setcolor",
+                    "identifier":"Setcolor"
+                },
+                {
+                    "content":"/lightInfo",
+                    "identifier":"lightInfo"
+                }
+            ]
+        }
+    },
+    "properties": [
+        {
+            "accessMode": "r",
+            "dataType": {
+                "specs": {
+                    "0":"OFF",
+                    "1":"ON"
+                },
+                "type": "bool"
+            },
+            "desc": "灯的状态",
+            "identifier": "lightStatus",
+            "name": "灯的状态",
+            "required": true,
+            "extendConfig": {
+                "modbusConfig": {
+                    "properties": [
+                        {}
+                    ]
+                }
+            }
+        },        
+        {
+            "accessMode": "r",
+            "dataType": {
+                "specs": {
+                    "length":16
+                },
+                "type": "text"
+            },
+            "desc": "IP",
+            "identifier": "IP",
+            "name": "IP",
+            "required": true,
+            "extendConfig": {
+                "modbusConfig": {
+                    "properties": [
+                        {}
+                    ]
+                }
+            }
+        },
+        {
+            "accessMode": "r",
+            "dataType": {
+                "specs": {
+                    "length":"1"
+                },
+                "type": "text"
+            },
+            "desc": "灯的颜色",
+            "identifier": "lightColor",
+            "name": "lightColor",
+            "required": true,
+            "extendConfig": {
+                "modbusConfig": {
+                    "properties": [
+                        {}
+                    ]
+                }
+            }
+        }
+    ],
+    "services": [
+        {
+            "callType": "sync",
+            "desc": "打开灯",
+            "identifier": "lightON",
+            "inputData": [],
+            "name": "",
+            "outputData": [],
+            "required": true,
+            "protobufFunctionType": "action",
+            "extendConfig": {
+                "customizeConfig": {
+                    "services": [
+                        {}
+                    ]
+                }
+            }
+        },
+        {
+            "callType": "sync",
+            "desc": "关闭灯",
+            "identifier": "lightOFF",
+            "inputData": [],
+            "name": "关闭灯",
+            "outputData": [],
+            "required": true,
+            "protobufFunctionType": "action",
+            "extendConfig": {
+                "customizeConfig": {
+                    "services": [
+                        {}
+                    ]
+                }
+            }
+        },
+        {
+            "callType": "sync",
+            "desc": "查看灯的状态",
+            "identifier": "lightInfo",
+            "inputData": [],
+            "name": "lightInfo",
+            "outputData": [
+                {
+                    "dataType":{
+                        "specs":[
+                            {
+                                "dataType":{
+                                    "specs":{
+                                        "0":"OFF",
+                                        "1":"ON"
+                                    },
+                                    "type":"bool"
+                                },
+                                "identifier":"lightStatus",
+                                "name":"灯的开关状态"
+                            },
+                            {
+                                "dataType":{
+                                    "specs":{
+                                        "length":"1"
+                                    },
+                                    "type":"text"
+                                },
+                                "identifier":"lightColor",
+                                "name":"灯的颜色"
+                            },
+                            {
+                                "dataType":{
+                                    "specs":{
+                                        "length":"16"
+                                    },
+                                    "type":"text"
+                                },
+                                "identifier":"IP",
+                                "name":"IP"
+                            }
+                        ],
+                        "type":"struct"
+                    },
+                    "identifier":"lightInfo_result",
+                    "name":"灯的状态"
+                }
+            ],
+            "required": true,
+            "protobufFunctionType": "action",
+            "extendConfig": {
+                "customizeConfig": {
+                    "services": [
+                        {}
+                    ]
+                }
+            }
+        },
+        {
+            "callType": "sync",
+            "desc": "更改灯的颜色",
+            "identifier": "Setcolor",
+            "inputData": [
+                {
+                    "dataType":{
+                        "specs":{
+                            "length":"1"
+                        },
+                        "type":"text"
+                    },
+                    "identifier":"color",
+                    "name":"灯的颜色"
+                }
+            ],
+            "name": "Setcolor",
+            "outputData": [
+                {
+                    "dataType":{
+                        "specs":{
+                            "0":"OFF",
+                            "1":"ON" 
+                        },
+                        "type":"bool"
+                    },
+                    "identifier": "lightColor",
+                    "name":"灯的颜色"
+                }
+            ],
+            "required": true,
+            "protobufFunctionType": "action",
+            "extendConfig": {
+                "customizeConfig": {
+                    "services": [
+                        {}
+                    ]
+                }
+            }
+        }
+    ]  
+}
