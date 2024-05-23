@@ -13,7 +13,7 @@ void My_Python_MainEVN_Manager_init()
     PyConfig_SetString(&config, &config.executable,
         L"/opt/python-d/bin/python3.10");
     Py_InitializeFromConfig(&config);
-    Add_Module_Search_Path("./");
+    Add_Module_Search_Path("../../PyembedENV");
 }
 
 int main(int argc, char* argv[])
@@ -28,7 +28,6 @@ int main(int argc, char* argv[])
     // 返回PyObject*
     std::future<PyObject*> call_result;
     async_Call_By_Name(call_result, "testmodule", "EVAL", "{\"first\":1, \"second\":2}");
-
 
     // 确保异步调用完成，防止死锁
     PyObject* result = call_result.get();
