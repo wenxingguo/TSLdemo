@@ -11,6 +11,10 @@ add_executable(PyembedENV_MultiThread PyembedENV.cpp PyembedENV_MultiThread_test
 target_include_directories(PyembedENV_MultiThread PRIVATE ${PYTHON_INCLUDE_DIRS})
 target_link_libraries(PyembedENV_MultiThread PRIVATE ${PYTHON_LIBRARIES})
 
+add_executable(PyembedENV_PlainTest PyembedENV_PlainTest.cpp)
+target_include_directories(PyembedENV_PlainTest PRIVATE ${PYTHON_INCLUDE_DIRS})
+target_link_libraries(PyembedENV_PlainTest PRIVATE ${PYTHON_LIBRARIES})
+
 
 
 #add_subdirectory(HttpEquipmentServer)

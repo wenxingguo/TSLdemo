@@ -14,6 +14,7 @@ void My_Python_MainEVN_Manager_init()
         L"/opt/python-d/bin/python3.10");
     Py_InitializeFromConfig(&config);
     Add_Module_Search_Path("../../PyembedENV");
+    PyImport_AddModule("__main__");
 }
 
 int main(int argc, char* argv[])
@@ -23,11 +24,18 @@ int main(int argc, char* argv[])
     }
 
     // 无返回值
-    async_Call_By_Name(std::future<std::void_t<>>(), "testmodule", "echo", "{\"first\":1, \"second\":2}");
+    // async_Call_By_Name(std::future<std::void_t<>>(), "testmodule", "echo", "{\"first\":1, \"second\":2}");
 
     // 返回PyObject*
+    PyObject* m = Get_Module_by_Name("__main__");
+    PyObject* d1 = PyModule_GetDict(m);
+    Py_XINCREF(d1);
+    Py_XINCREF(d1);
+
+    // 调用 builtins 的eval
     std::future<PyObject*> call_result;
-    async_Call_By_Name(call_result, "testmodule", "EVAL", "{\"first\":1, \"second\":2}");
+    // async_Call_By_Name(call_result, "testmodule", "EVAL", "{\"first\":1, \"second\":2}");
+    async_Call_By_Name(call_result, "builtins", "eval", "{\"first\":1, \"second\":2}", d1, d1);
 
     // 确保异步调用完成，防止死锁
     PyObject* result = call_result.get();

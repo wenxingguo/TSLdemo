@@ -60,6 +60,16 @@ public:
         main_thread_state = PyEval_SaveThread();
     }
 
+    void RestoreMainThread()
+    {
+        PyEval_RestoreThread(main_thread_state);
+    }
+
+    void SaveMainThead()
+    {
+        main_thread_state = PyEval_SaveThread();
+    }
+
     virtual ~Python_MainENV_Manager()
     {
         // 恢复主线程环境
@@ -89,12 +99,28 @@ T call_object(PyObject* callable, PyObject* args_tuple)
     GIL_EnSure s;
 
     // 调用参数为PyTuple
+    // 对于builtins的内的函数，建议在脚本中进行调用
+    /*
+     * 如eval()
+     * def module_eval(in_str : str):
+     *   return eval(in_str)
+     * 通过模块调用module_eval()
+     * */
 
     if constexpr (std::is_same_v<std::void_t<>, T>) {
         PyObject_CallObject(callable, args_tuple);
+        PyObject* err = PyErr_Occurred();
+        if (err != NULL)
+            PyErr_Print();
+        assert(err == NULL);
+
         Py_XDECREF(args_tuple);
     } else {
         PyObject* return_data = PyObject_CallObject(callable, args_tuple);
+        PyObject* err = PyErr_Occurred();
+        if (err != NULL)
+            PyErr_Print();
+        assert(err == NULL);
         T result;
         if (return_data) { // 类型需要完备
             if constexpr (std::is_same_v<int, T>) {
@@ -133,6 +159,9 @@ void _Gen_Tuple_from_Args(PyObject* py_tuple, int index, T&& head, Args&&... arg
         item = PyUnicode_FromString(head.c_str());
     } else if constexpr (std::is_same_v<char const*, D_T> || std::is_same_v<char*, D_T>) {
         item = PyUnicode_FromString(head);
+    } else if constexpr (std::is_same_v<PyObject*, D_T>) {
+        // 支持PyObject*
+        item = head;
     }
     assert(item != NULL);
     // item的所有权转移
@@ -148,7 +177,6 @@ PyObject* Gen_Tuple_from_Args(Args&&... args)
 
     PyObject* py_tuple = PyTuple_New(total_size);
     _Gen_Tuple_from_Args(py_tuple, 0, std::forward<Args>(args)...);
-    // assert(PyTuple_Size(py_tuple) == total_size);
     return py_tuple;
 }
 

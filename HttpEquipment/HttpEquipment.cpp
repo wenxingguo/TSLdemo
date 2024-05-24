@@ -19,7 +19,6 @@ std::string HttpEquipment::invokeService(const std::string& service_identifier, 
 {
 
     // argsvs = {"service", identifier, url, key1=value1, key2=value2, .....}
-
     // 构造url
     std::string service_url = "http://" + IP + getUrlbyIdentifier(service_identifier);
     if (!argsvs.empty()) {
