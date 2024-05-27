@@ -1,4 +1,4 @@
-#include "../TSLParser.hpp"
+#include "TSLParser.hpp"
 #include <iostream>
 
 void formatClassName(std::string& s)

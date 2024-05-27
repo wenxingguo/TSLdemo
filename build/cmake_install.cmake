@@ -46,7 +46,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/wood/Documents/TSLdemo/build/PyembedENV/cmake_install.cmake")
   include("/home/wood/Documents/TSLdemo/build/HttpEquipment/cmake_install.cmake")
-  include("/home/wood/Documents/TSLdemo/build/TSLParserTest/cmake_install.cmake")
+  include("/home/wood/Documents/TSLdemo/build/TSLParser/cmake_install.cmake")
 
 endif()
 

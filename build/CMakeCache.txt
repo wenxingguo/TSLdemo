@@ -248,13 +248,13 @@ TSLDemo_IS_TOP_LEVEL:STATIC=ON
 TSLDemo_SOURCE_DIR:STATIC=/home/wood/Documents/TSLdemo
 
 //Value Computed by CMake
-TSLParserTest_BINARY_DIR:STATIC=/home/wood/Documents/TSLdemo/build/TSLParserTest
+TSLParserTest_BINARY_DIR:STATIC=/home/wood/Documents/TSLdemo/build/TSLParser
 
 //Value Computed by CMake
 TSLParserTest_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-TSLParserTest_SOURCE_DIR:STATIC=/home/wood/Documents/TSLdemo/TSLParserTest
+TSLParserTest_SOURCE_DIR:STATIC=/home/wood/Documents/TSLdemo/TSLParser
 
 
 ########################

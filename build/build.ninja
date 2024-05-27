@@ -374,13 +374,13 @@ build HttpEquipment/HttpEquipmentServer/rebuild_cache: phony HttpEquipment/HttpE
 #############################################
 # Order-only phony target for TSLParserTest
 
-build cmake_object_order_depends_target_TSLParserTest: phony || TSLParserTest/CMakeFiles/TSLParserTest.dir
+build cmake_object_order_depends_target_TSLParserTest: phony || TSLParser/CMakeFiles/TSLParserTest.dir
 
-build TSLParserTest/CMakeFiles/TSLParserTest.dir/TSLParserTest.cpp.o: CXX_COMPILER__TSLParserTest_Debug /home/wood/Documents/TSLdemo/TSLParserTest/TSLParserTest.cpp || cmake_object_order_depends_target_TSLParserTest
-  DEP_FILE = TSLParserTest/CMakeFiles/TSLParserTest.dir/TSLParserTest.cpp.o.d
+build TSLParser/CMakeFiles/TSLParserTest.dir/TSLParserTest.cpp.o: CXX_COMPILER__TSLParserTest_Debug /home/wood/Documents/TSLdemo/TSLParser/TSLParserTest.cpp || cmake_object_order_depends_target_TSLParserTest
+  DEP_FILE = TSLParser/CMakeFiles/TSLParserTest.dir/TSLParserTest.cpp.o.d
   FLAGS = -g -std=gnu++20
-  OBJECT_DIR = TSLParserTest/CMakeFiles/TSLParserTest.dir
-  OBJECT_FILE_DIR = TSLParserTest/CMakeFiles/TSLParserTest.dir
+  OBJECT_DIR = TSLParser/CMakeFiles/TSLParserTest.dir
+  OBJECT_FILE_DIR = TSLParser/CMakeFiles/TSLParserTest.dir
 
 
 # =============================================================================
@@ -388,39 +388,39 @@ build TSLParserTest/CMakeFiles/TSLParserTest.dir/TSLParserTest.cpp.o: CXX_COMPIL
 
 
 #############################################
-# Link the executable TSLParserTest/TSLParserTest
+# Link the executable TSLParser/TSLParserTest
 
-build TSLParserTest/TSLParserTest: CXX_EXECUTABLE_LINKER__TSLParserTest_Debug TSLParserTest/CMakeFiles/TSLParserTest.dir/TSLParserTest.cpp.o
+build TSLParser/TSLParserTest: CXX_EXECUTABLE_LINKER__TSLParserTest_Debug TSLParser/CMakeFiles/TSLParserTest.dir/TSLParserTest.cpp.o
   FLAGS = -g
-  OBJECT_DIR = TSLParserTest/CMakeFiles/TSLParserTest.dir
+  OBJECT_DIR = TSLParser/CMakeFiles/TSLParserTest.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = TSLParserTest/TSLParserTest
+  TARGET_FILE = TSLParser/TSLParserTest
   TARGET_PDB = TSLParserTest.dbg
 
 
 #############################################
 # Utility command for edit_cache
 
-build TSLParserTest/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/wood/Documents/TSLdemo/build/TSLParserTest && /usr/bin/cmake-gui -S/home/wood/Documents/TSLdemo -B/home/wood/Documents/TSLdemo/build
+build TSLParser/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/wood/Documents/TSLdemo/build/TSLParser && /usr/bin/cmake-gui -S/home/wood/Documents/TSLdemo -B/home/wood/Documents/TSLdemo/build
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
 
-build TSLParserTest/edit_cache: phony TSLParserTest/CMakeFiles/edit_cache.util
+build TSLParser/edit_cache: phony TSLParser/CMakeFiles/edit_cache.util
 
 
 #############################################
 # Utility command for rebuild_cache
 
-build TSLParserTest/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/wood/Documents/TSLdemo/build/TSLParserTest && /usr/bin/cmake --regenerate-during-build -S/home/wood/Documents/TSLdemo -B/home/wood/Documents/TSLdemo/build
+build TSLParser/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/wood/Documents/TSLdemo/build/TSLParser && /usr/bin/cmake --regenerate-during-build -S/home/wood/Documents/TSLdemo -B/home/wood/Documents/TSLdemo/build
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
 
-build TSLParserTest/rebuild_cache: phony TSLParserTest/CMakeFiles/rebuild_cache.util
+build TSLParser/rebuild_cache: phony TSLParser/CMakeFiles/rebuild_cache.util
 
 # =============================================================================
 # Target aliases.
@@ -435,7 +435,7 @@ build PyembedENV_PlainTest: phony PyembedENV/PyembedENV_PlainTest
 
 build PyembedENV_SingleThread: phony PyembedENV/PyembedENV_SingleThread
 
-build TSLParserTest: phony TSLParserTest/TSLParserTest
+build TSLParserTest: phony TSLParser/TSLParserTest
 
 # =============================================================================
 # Folder targets.
@@ -445,7 +445,7 @@ build TSLParserTest: phony TSLParserTest/TSLParserTest
 #############################################
 # Folder: /home/wood/Documents/TSLdemo/build
 
-build all: phony PyembedENV/all HttpEquipment/all TSLParserTest/all
+build all: phony PyembedENV/all HttpEquipment/all TSLParser/all
 
 # =============================================================================
 
@@ -471,9 +471,9 @@ build PyembedENV/all: phony PyembedENV/PyembedENV_SingleThread PyembedENV/Pyembe
 # =============================================================================
 
 #############################################
-# Folder: /home/wood/Documents/TSLdemo/build/TSLParserTest
+# Folder: /home/wood/Documents/TSLdemo/build/TSLParser
 
-build TSLParserTest/all: phony TSLParserTest/TSLParserTest
+build TSLParser/all: phony TSLParser/TSLParserTest
 
 # =============================================================================
 # Built-in targets
@@ -482,14 +482,14 @@ build TSLParserTest/all: phony TSLParserTest/TSLParserTest
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../HttpEquipment/CMakeLists.txt ../HttpEquipment/HttpEquipmentServer/CMakeLists.txt ../PyembedENV/CMakeLists.txt ../TSLParserTest/CMakeLists.txt /usr/share/cmake-3.22/Modules/CMakeCInformation.cmake /usr/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.22/Modules/CMakeFindFrameworks.cmake /usr/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.22/Modules/Compiler/Clang-C.cmake /usr/share/cmake-3.22/Modules/Compiler/Clang-CXX.cmake /usr/share/cmake-3.22/Modules/Compiler/Clang.cmake /usr/share/cmake-3.22/Modules/Compiler/GNU.cmake /usr/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.22/Modules/FindPackageMessage.cmake /usr/share/cmake-3.22/Modules/FindPython/Support.cmake /usr/share/cmake-3.22/Modules/FindPython3.cmake /usr/share/cmake-3.22/Modules/FindPythonLibs.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-Clang-C.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-Clang-CXX.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.22/Modules/Platform/Linux.cmake /usr/share/cmake-3.22/Modules/Platform/UnixPaths.cmake /usr/share/cmake-3.22/Modules/SelectLibraryConfigurations.cmake CMakeCache.txt CMakeFiles/3.22.1/CMakeCCompiler.cmake CMakeFiles/3.22.1/CMakeCXXCompiler.cmake CMakeFiles/3.22.1/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../HttpEquipment/CMakeLists.txt ../HttpEquipment/HttpEquipmentServer/CMakeLists.txt ../PyembedENV/CMakeLists.txt ../TSLParser/CMakeLists.txt /usr/share/cmake-3.22/Modules/CMakeCInformation.cmake /usr/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.22/Modules/CMakeFindFrameworks.cmake /usr/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.22/Modules/Compiler/Clang-C.cmake /usr/share/cmake-3.22/Modules/Compiler/Clang-CXX.cmake /usr/share/cmake-3.22/Modules/Compiler/Clang.cmake /usr/share/cmake-3.22/Modules/Compiler/GNU.cmake /usr/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.22/Modules/FindPackageMessage.cmake /usr/share/cmake-3.22/Modules/FindPython/Support.cmake /usr/share/cmake-3.22/Modules/FindPython3.cmake /usr/share/cmake-3.22/Modules/FindPythonLibs.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-Clang-C.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-Clang-CXX.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.22/Modules/Platform/Linux.cmake /usr/share/cmake-3.22/Modules/Platform/UnixPaths.cmake /usr/share/cmake-3.22/Modules/SelectLibraryConfigurations.cmake CMakeCache.txt CMakeFiles/3.22.1/CMakeCCompiler.cmake CMakeFiles/3.22.1/CMakeCXXCompiler.cmake CMakeFiles/3.22.1/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt ../HttpEquipment/CMakeLists.txt ../HttpEquipment/HttpEquipmentServer/CMakeLists.txt ../PyembedENV/CMakeLists.txt ../TSLParserTest/CMakeLists.txt /usr/share/cmake-3.22/Modules/CMakeCInformation.cmake /usr/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.22/Modules/CMakeFindFrameworks.cmake /usr/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.22/Modules/Compiler/Clang-C.cmake /usr/share/cmake-3.22/Modules/Compiler/Clang-CXX.cmake /usr/share/cmake-3.22/Modules/Compiler/Clang.cmake /usr/share/cmake-3.22/Modules/Compiler/GNU.cmake /usr/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.22/Modules/FindPackageMessage.cmake /usr/share/cmake-3.22/Modules/FindPython/Support.cmake /usr/share/cmake-3.22/Modules/FindPython3.cmake /usr/share/cmake-3.22/Modules/FindPythonLibs.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-Clang-C.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-Clang-CXX.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.22/Modules/Platform/Linux.cmake /usr/share/cmake-3.22/Modules/Platform/UnixPaths.cmake /usr/share/cmake-3.22/Modules/SelectLibraryConfigurations.cmake CMakeCache.txt CMakeFiles/3.22.1/CMakeCCompiler.cmake CMakeFiles/3.22.1/CMakeCXXCompiler.cmake CMakeFiles/3.22.1/CMakeSystem.cmake: phony
+build ../CMakeLists.txt ../HttpEquipment/CMakeLists.txt ../HttpEquipment/HttpEquipmentServer/CMakeLists.txt ../PyembedENV/CMakeLists.txt ../TSLParser/CMakeLists.txt /usr/share/cmake-3.22/Modules/CMakeCInformation.cmake /usr/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.22/Modules/CMakeFindFrameworks.cmake /usr/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.22/Modules/Compiler/Clang-C.cmake /usr/share/cmake-3.22/Modules/Compiler/Clang-CXX.cmake /usr/share/cmake-3.22/Modules/Compiler/Clang.cmake /usr/share/cmake-3.22/Modules/Compiler/GNU.cmake /usr/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.22/Modules/FindPackageMessage.cmake /usr/share/cmake-3.22/Modules/FindPython/Support.cmake /usr/share/cmake-3.22/Modules/FindPython3.cmake /usr/share/cmake-3.22/Modules/FindPythonLibs.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-Clang-C.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-Clang-CXX.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.22/Modules/Platform/Linux.cmake /usr/share/cmake-3.22/Modules/Platform/UnixPaths.cmake /usr/share/cmake-3.22/Modules/SelectLibraryConfigurations.cmake CMakeCache.txt CMakeFiles/3.22.1/CMakeCCompiler.cmake CMakeFiles/3.22.1/CMakeCXXCompiler.cmake CMakeFiles/3.22.1/CMakeSystem.cmake: phony
 
 
 #############################################

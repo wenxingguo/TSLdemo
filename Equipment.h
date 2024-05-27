@@ -1,7 +1,7 @@
 #ifndef EQUIPMENT_H
 #define EQUIPMENT_H
 
-#include "TSLParser.hpp"
+//#include "TSLParser/TSLParser.hpp"
 #include "typedef.h"
 #include <memory>
 #include <string>

@@ -61,7 +61,7 @@
 },
 {
   "directory": "/home/wood/Documents/TSLdemo/build",
-  "command": "/usr/bin/clang++ -g -std=gnu++20 -o TSLParserTest/CMakeFiles/TSLParserTest.dir/TSLParserTest.cpp.o -c /home/wood/Documents/TSLdemo/TSLParserTest/TSLParserTest.cpp",
-  "file": "/home/wood/Documents/TSLdemo/TSLParserTest/TSLParserTest.cpp"
+  "command": "/usr/bin/clang++ -g -std=gnu++20 -o TSLParser/CMakeFiles/TSLParserTest.dir/TSLParserTest.cpp.o -c /home/wood/Documents/TSLdemo/TSLParser/TSLParserTest.cpp",
+  "file": "/home/wood/Documents/TSLdemo/TSLParser/TSLParserTest.cpp"
 }
 ]

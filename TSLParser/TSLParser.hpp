@@ -1,8 +1,8 @@
 #ifndef TSLPARSER_H
 #define TSLPARSER_H
 
+#include "../typedef.h"
 #include "json.hpp"
-#include "typedef.h"
 #include <fstream>
 #include <unordered_set>
 

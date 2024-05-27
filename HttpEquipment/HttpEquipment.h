@@ -3,7 +3,7 @@
 
 #include "../Equipment.h"
 #include "../PyembedENV/PyembedENV.h"
-#include "../TSLParser.hpp"
+#include "../TSLParser/TSLParser.hpp"
 #include "HttpClient.hpp"
 
 typedef std::vector<std::vector<std::string>> HttpEquipmentUrls_Type; //{service identifier urls }

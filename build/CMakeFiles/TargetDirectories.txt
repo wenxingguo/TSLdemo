@@ -11,6 +11,6 @@
 /home/wood/Documents/TSLdemo/build/HttpEquipment/HttpEquipmentServer/CMakeFiles/LightServer.dir
 /home/wood/Documents/TSLdemo/build/HttpEquipment/HttpEquipmentServer/CMakeFiles/edit_cache.dir
 /home/wood/Documents/TSLdemo/build/HttpEquipment/HttpEquipmentServer/CMakeFiles/rebuild_cache.dir
-/home/wood/Documents/TSLdemo/build/TSLParserTest/CMakeFiles/TSLParserTest.dir
-/home/wood/Documents/TSLdemo/build/TSLParserTest/CMakeFiles/edit_cache.dir
-/home/wood/Documents/TSLdemo/build/TSLParserTest/CMakeFiles/rebuild_cache.dir
+/home/wood/Documents/TSLdemo/build/TSLParser/CMakeFiles/TSLParserTest.dir
+/home/wood/Documents/TSLdemo/build/TSLParser/CMakeFiles/edit_cache.dir
+/home/wood/Documents/TSLdemo/build/TSLParser/CMakeFiles/rebuild_cache.dir

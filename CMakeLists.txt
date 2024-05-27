@@ -10,6 +10,6 @@ add_subdirectory(PyembedENV)
 
 add_subdirectory(HttpEquipment)
 
-add_subdirectory(TSLParserTest)
+add_subdirectory(TSLParser)
 
 
