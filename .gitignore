@@ -1,0 +1,5 @@
+.vscode/
+.cache/
+build/
+PyembedENV/__pycache__/
+HttpEquipment/pymoudle/__pycache__/
