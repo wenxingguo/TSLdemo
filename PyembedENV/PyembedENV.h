@@ -180,6 +180,27 @@ PyObject* Gen_Tuple_from_Args(Args&&... args)
     return py_tuple;
 }
 
+// 同步调用
+template <typename T, typename... Args>
+T sync_Call_Object(PyObject* callable, Args&&... args)
+{
+    PyObject* args_tuple = Gen_Tuple_from_Args(std::forward<Args>(args)...);
+    T result = call_object<T>(callable, args_tuple);
+    return result;
+}
+
+template <typename T, typename... Args>
+T sync_Call_By_Name(const std::string& module_name, const std::string& object_name, Args&&... args)
+{
+    PyObject* module_Obj = Get_Module_by_Name(module_name);
+    PyObject* func_Obj = Get_Attr_by_Name(module_Obj, object_name);
+    T result = sync_Call_Object<T>(func_Obj, std::forward<Args>(args)...);
+    Py_XDECREF(module_Obj);
+    Py_XDECREF(func_Obj);
+    return result;
+}
+
+// 异步调用
 template <typename RT, template <typename RT_> typename T, typename... Args>
 void async_Call_Object(T<RT>&& future_out, Args&&... args) //-> std::future<T>
 {
@@ -211,6 +232,7 @@ void async_Call_By_Name(T<RT>&& future_out,
     assert(func_Obj != NULL && PyCallable_Check(func_Obj) == 1);
 
     // args_tuple是新引用，在call_object中释放, 以确保其调用时有效
+    // 该函数存在所有权的转移
     PyObject* args_tuple = Gen_Tuple_from_Args(std::forward<Args>(args)...);
 
     async_Call_Object(future_out, func_Obj, args_tuple);

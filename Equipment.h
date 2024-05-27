@@ -25,7 +25,6 @@ enum class EquipmentType {
     EQUIPMENT_NONE = -1,
     EQUIPMENT_CUSTOM = 0,
     EQUIPMENT_HTTP = 1,
-
 };
 
 class Equipment {
